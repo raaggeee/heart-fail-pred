@@ -1,0 +1,8 @@
+stages:
+  data_ingestion:
+    cmd: python3 src/data_ingestion/data_ingestion.py
+    deps:
+    - data/raw
+    - src/data_ingestion/data_ingestion.py
+    outs:
+    - data/interim
