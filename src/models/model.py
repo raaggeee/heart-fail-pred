@@ -53,7 +53,7 @@ def fit(input_dim, output_dim, lr, epochs, batch_size, X, y, iter, hidden_dim=4)
     n_sample = X.shape[0]
 
     for j in range(epochs):
-        print(f"====EPOCH-{j}====")
+        # print(f"====EPOCH-{j}====")
         for i in range(0, n_sample, batch_size):
             optim.zero_grad()
             X_batch = X[i:i+batch_size]
@@ -66,7 +66,8 @@ def fit(input_dim, output_dim, lr, epochs, batch_size, X, y, iter, hidden_dim=4)
 
             loss.backward()
             optim.step()
-            print(f"Loss: {loss.item()}")
+            
+        print(f"====EPOCH-{j}==== Loss: {loss.item()}")
 
     torch.save(model.state_dict(), f"models/model.pkl")
 

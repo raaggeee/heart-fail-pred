@@ -13,10 +13,10 @@ model:
     learning_rate: 0.01
 
   layers:
-    hidden_neurons: 4
+    hidden_neurons: 10
 
-  epochs: 2
-  batch_size: 2
+  epochs: 100
+  batch_size: 32
 
   iter: 1
 
