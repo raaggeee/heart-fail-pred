@@ -6,3 +6,22 @@ stages:
     - src/data_ingestion/data_ingestion.py
     outs:
     - data/interim
+  data_preprocessing:
+    cmd: python3 src/data_preprocessing/data_preprocessing.py
+    deps:
+    - data/interim
+    - src/data_preprocessing/data_preprocessing.py
+    outs:
+    - data/preprocessed
+  model_train:
+    cmd: python3 src/models/model.py
+    deps:
+    - data/preprocessed
+    - src/models/model.py
+    outs:
+    - models/model.pkl
+  model_eval:
+    cmd: python3 src/models/model_eval.py
+    deps:
+    - models/model.pkl
+    - src/models/model_eval.py

@@ -18,3 +18,49 @@ stages:
       md5: 7dac03e08a1bc83d528d5280d11bfb2e.dir
       size: 40741
       nfiles: 2
+  data_preprocessing:
+    cmd: python3 src/data_preprocessing/data_preprocessing.py
+    deps:
+    - path: data/interim
+      hash: md5
+      md5: 7dac03e08a1bc83d528d5280d11bfb2e.dir
+      size: 40741
+      nfiles: 2
+    - path: src/data_preprocessing/data_preprocessing.py
+      hash: md5
+      md5: b8a9f1d821915f1fa4ef3d4ffa00fc90
+      size: 2362
+    outs:
+    - path: data/preprocessed
+      hash: md5
+      md5: a78bcea133700622a6d72d1b80d53493.dir
+      size: 217278
+      nfiles: 2
+  model_train:
+    cmd: python3 src/models/model.py
+    deps:
+    - path: data/preprocessed
+      hash: md5
+      md5: a78bcea133700622a6d72d1b80d53493.dir
+      size: 217278
+      nfiles: 2
+    - path: src/models/model.py
+      hash: md5
+      md5: 99d06c2afd7d336f0b722322a4021626
+      size: 2478
+    outs:
+    - path: models/model.pkl
+      hash: md5
+      md5: 0d83e736f49c8c8bf7dab37d2be28a27
+      size: 3133
+  model_eval:
+    cmd: python3 src/models/model_eval.py
+    deps:
+    - path: models/model.pkl
+      hash: md5
+      md5: 0d83e736f49c8c8bf7dab37d2be28a27
+      size: 3133
+    - path: src/models/model_eval.py
+      hash: md5
+      md5: b800bdd4ba1e8ec22ba1ba00ae2543bd
+      size: 1665

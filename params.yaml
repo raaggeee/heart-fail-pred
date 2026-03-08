@@ -1,3 +1,26 @@
 data_ingestion:
   test_size: 0.2
   file_path: "data/raw/heart.csv"
+
+data_preprocessing:
+  train_path: "data/interim/train_data.csv"
+  test_path: "data/interim/test_data.csv"
+
+model:
+  train_path: "data/preprocessed/train_data_processed.csv"
+
+  optmizers:
+    learning_rate: 0.01
+
+  layers:
+    hidden_neurons: 4
+
+  epochs: 2
+  batch_size: 2
+
+  iter: 1
+
+model_eval:
+  model_path: "/data2/heaart-fail-prediction/models/model.pkl"
+
+  test_path: "data/preprocessed/test_data_processed.csv"
