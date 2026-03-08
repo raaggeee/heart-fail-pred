@@ -39,22 +39,16 @@ na
 │
 ├── setup.cfg          <- Configuration file for flake8
 │
-└── heart-fail-pred   <- Source code for use in this project.
+└── src   <- Source code for use in this project.
     │
-    ├── __init__.py             <- Makes heart-fail-pred a Python module
+    ├── data_ingestion            
     │
-    ├── config.py               <- Store useful variables and configuration
+    ├── data_preprocessing        
     │
-    ├── dataset.py              <- Scripts to download or generate data
+    ├── models             
     │
-    ├── features.py             <- Code to create features for modeling
-    │
-    ├── modeling                
-    │   ├── __init__.py 
-    │   ├── predict.py          <- Code to run model inference with trained models          
-    │   └── train.py            <- Code to train models
-    │
-    └── plots.py                <- Code to create visualizations
+    ├── features.py            
+
 ```
 
 --------
